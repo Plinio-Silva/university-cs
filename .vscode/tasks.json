@@ -8,12 +8,11 @@
             "args": [
                 "${file}",
                 "-o",
-                "${fileBasenameNoExtension}.exe"
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
             ],
-            "group": "build",
-            "problemMatcher": [],
-            "options": {
-                "cwd": "${fileDirname}"
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         }
     ]
