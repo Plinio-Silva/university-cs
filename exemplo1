@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+
+    int i = 0;
+
+    while (i < 10) {
+        printf("%d\n", i);
+        i++;
+    }
+
+    // Pausa para o usuario pressionar ENTER antes de sair
+    printf("Pressione ENTER para sair...");
+    getchar();
+    getchar();
+
+
+    return 0;
+}
