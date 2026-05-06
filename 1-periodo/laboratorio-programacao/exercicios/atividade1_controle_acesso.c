@@ -1,39 +1,61 @@
-/* Código de Plínio Tiago da Silva */
+// Plínio Tiago da Silva
 
-/* Inclui a biblioteca padrão de entrada e saída para usar funções como printf e scanf */
+/*
+ * Objetivo do programa:
+ * Este programa verifica se um funcionário pode acessar a área de carga com base em duas condições:
+ * 1. Se o funcionário tem o crachá de identificação (representado por 1).
+ * 2. Se não há um alerta de segurança ativo (representado por 0).
+ * O programa solicita ao usuário os valores dessas condições e decide se o acesso é permitido.
+ */
+
 #include <stdio.h>
 
-/* Função principal do programa */
 int main() {
-    /* Declara variáveis para armazenar a idade e se possui convite */
-    int idade;
-    int temConvite;
+    // Declaração das variáveis
+    // temCracha: indica se o funcionário possui o crachá de identificação.
+    // 1 significa sim (possui), 0 significa não.
+    // Usamos int para representar valores booleanos (0 ou 1).
+    int temCracha;
 
-    /* Solicita ao usuário que digite sua idade */
-    printf("Digite sua idade: ");
-    /* Lê a idade digitada pelo usuário */
-    scanf("%d", &idade);
+    // alertaSeguranca: indica se há um alerta de segurança ativo.
+    // 1 significa ativo, 0 significa inativo.
+    // Usamos int para representar valores booleanos (0 ou 1).
+    int alertaSeguranca;
 
-    /* Pergunta se o usuário possui convite */
-    printf("Possui convite? (1 para sim, 0 para nao): ");
-    /* Lê a resposta sobre o convite */
-    scanf("%d", &temConvite);
+    // Solicita ao usuário se possui crachá
+    // Usamos printf para exibir uma mensagem pedindo a entrada.
+    printf("Digite 1 se possui cracha ou 0 se nao possui: ");
 
-    /* Verifica se a idade é maior ou igual a 18 e se possui convite */
-    if (idade >= 18 && temConvite == 1) {
-        /* Se as condições forem atendidas, permite o acesso */
-        printf("Acesso permitido.\n");
+    // Lê a entrada do usuário e armazena em temCracha
+    // scanf lê um int (%d) da entrada padrão (teclado).
+    scanf("%d", &temCracha);
+
+    // Solicita ao usuário se há alerta de segurança
+    // 1 para ativo, 0 para inativo.
+    printf("Digite 1 se alerta de seguranca ativo ou 0 se inativo: ");
+
+    // Lê a entrada e armazena em alertaSeguranca
+    scanf("%d", &alertaSeguranca);
+
+    // Lógica de decisão
+    // Usamos o operador && (E lógico) e ! (negação) para verificar ambas as condições:
+    // - temCracha: verifica se é 1 (possui crachá).
+    // - !alertaSeguranca: o operador ! inverte o valor, então se alertaSeguranca for 0, !0 é 1 (verdadeiro).
+    // Se ambas forem verdadeiras, o acesso é permitido.
+    if (temCracha && !alertaSeguranca) {
+        // Imprime a permissão se as condições forem atendidas
+        printf("Acesso Permitido\n");
     } else {
-        /* Caso contrário, nega o acesso */
-        printf("Acesso negado.\n");
+        // Caso contrário, o acesso é negado
+        // Incluído para completude, embora a atividade não especifique.
+        printf("Acesso Negado\n");
     }
 
-    /* Mensagem para o usuário pressionar ENTER para sair */
+    // Pausa para o usuario pressionar ENTER antes de sair
     printf("Pressione ENTER para sair...");
-    /* Aguarda o usuário pressionar ENTER duas vezes (devido ao buffer) */
     getchar();
     getchar();
 
-    /* Retorna 0 indicando que o programa terminou com sucesso */
+    // Retorna 0 para indicar que o programa terminou com sucesso
     return 0;
 }
