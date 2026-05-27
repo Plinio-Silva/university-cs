@@ -95,6 +95,6 @@ int main(void)
     } else {
         printf("Empate! Ninguém venceu.\n");
     }
-
+    getchar(); // Espera o usuário pressionar Enter antes de encerrar o programa
     return 0;
 }
