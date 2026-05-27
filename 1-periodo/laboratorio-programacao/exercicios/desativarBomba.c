@@ -9,5 +9,6 @@ int main(void)
     }
 
     printf("Bomba desativada com sucesso!\n");
+    getchar(); // Espera o usuário pressionar Enter antes de encerrar o programa
     return 0;
 }

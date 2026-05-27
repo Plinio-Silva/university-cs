@@ -21,6 +21,6 @@ int main(void)
     } else {
         printf("Ponto! Continue jogando\n");
     }
-
+    getchar(); // Espera o usuário pressionar Enter antes de encerrar o programa
     return 0;
 }
