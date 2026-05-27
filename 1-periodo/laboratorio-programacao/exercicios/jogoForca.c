@@ -62,6 +62,6 @@ int main(void)
     } else {
         printf("\nVocê perdeu. Limite de erros atingido. A palavra era '%s'.\n", palavraSecreta);
     }
-
+    getchar(); // Espera o usuário pressionar Enter antes de encerrar o programa
     return 0;
 }
