@@ -32,6 +32,6 @@ int main(void)
             printf("Nenhum pedido informado. Tente novamente.\n");
         }
     }
-
+    getchar(); // Espera o usuário pressionar Enter antes de encerrar o programa
     return 0;
 }
