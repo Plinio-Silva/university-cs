@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 
+//Plínio Tiago da Silva
+
 int main(void)
 {
     for (int contador = 10; contador >= 0; contador--) {

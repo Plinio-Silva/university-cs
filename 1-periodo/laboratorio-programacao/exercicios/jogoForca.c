@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//Plínio Tiago da Silva
+
 int main(void)
 {
     const char palavraSecreta[] = "computador";

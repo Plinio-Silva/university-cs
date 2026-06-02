@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+//Plínio Tiago da Silva
+
 int main(void)
 {
     srand(time(NULL));
