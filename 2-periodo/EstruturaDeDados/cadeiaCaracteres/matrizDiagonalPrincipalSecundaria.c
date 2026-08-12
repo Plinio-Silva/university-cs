@@ -25,7 +25,7 @@ int main() {
     }
 
     printf("\n\n A soma da diagonal principal: %d", diagonalPrincipal);
-    printf("\n A soma da diagonal secundária: %d", diagonalsecundaria);
+    printf("\n A soma da diagonal secundaria: %d", diagonalsecundaria);
 
     getchar(); // limpa o buffer do teclado
     getchar(); // pausa o programa para o usuário ver os resultados
