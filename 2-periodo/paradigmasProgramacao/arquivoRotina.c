@@ -1,15 +1,12 @@
-// criar um arquivo chamado funcaoRotina.c para criar rotinas e funções em C
-//  bibliotecas para lingua portuguesa
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <locale.h>
 # include <windows.h>
 
-// A subrotina Square recebe um número inteiro e retorna o quadrado desse número
-int Square(int a) {
-    return a * a;
-}
+// Caso em que é preciso declarar a função antes o protótipo da função
+
+int Square(int a);
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -20,8 +17,9 @@ int main() {
     scanf("%d", &n1);
     n2 = Square(n1);
     printf("O quadrado vale: %d\n", n2);
-
-    system("pause");
-
     return 0;
+}
+// pode ser declarado depois do main, mas precisa do protótipo antes do main
+int Square(int a) {
+    return a * a;
 }
