@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../../../../workSpaceVsCode"
+		},
+		{
+			"path": "../../../Meus-codigos-C"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../sugestaoDaviSiteCatalogo/catalogo-produtos"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "workSpaceVsCode"
+	}
+}
