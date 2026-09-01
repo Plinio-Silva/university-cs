@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <locale.h>
+#include <string.h>
 
 int main(){
-    setlocale(LC_ALL, "portuguese");
+    setlocale(LC_ALL, ".UTF-8");
 
     char string[20];
 
@@ -10,7 +11,7 @@ int main(){
 
     gets(string);
 
-    printf("\n\n Vove digitou: %s", string);
+    printf("\n\n Você digitou: %s", string);
 
     getchar();
     getchar();
