@@ -22,11 +22,16 @@ void flvazia(tipo_lista *lista){
 void inserir(tipo_lista *lista){
     system("cls");
    
+    if(lista->total == TAM){
+        printf("\n\n\tLista cheia! Não é possível inserir novos itens.");
+        return;
+    }
+
     printf("\n\n====== INSERINDO ITEM NA LISTA ======");
     tipo_item item;
-    printf("\n\nDigite o código: ");
+    printf("\n\nDigite o codigo: ");
     scanf("%d", &item.cod);
-    fflush(stdin);
+    getchar(); // consume the newline character left by scanf
     printf("\nDigite o nome do item: ");
     fgets(item.nome, 50, stdin);
     printf("\nDigite a quantidade: ");
@@ -40,6 +45,13 @@ void inserir(tipo_lista *lista){
 void mostrar(tipo_lista *lista){
     system("cls");
    
+    if(lista->total == 0)
+    {
+        printf("\n\n\tLista vazia! sem itens para mostrar.");
+        return;
+    }
+    
+
     printf("\n\n MOSTRANDO A LISTA:");
    
     for( int i = 0 ; i < lista->total; i++ ){
@@ -48,6 +60,32 @@ void mostrar(tipo_lista *lista){
         printf("\nNome: %s", lista->itens[i].nome);
         printf("Quant: %d", lista->itens[i].quant);
     }
+}
+
+void pesquisar(tipo_lista *lista){
+    system("cls");
+   
+    if(lista->total == 0)
+    {
+        printf("\n\n\tLista vazia! Sem itens para pesquisar.");
+        return;
+    }
+
+    int cod;
+    printf("\n\nDigite o codigo do item que deseja pesquisar: ");
+    scanf("%d", &cod);
+
+    for(int i = 0; i < lista->total; i++){
+        if(lista->itens[i].cod == cod){
+            printf("\n\n----- ITEM ENCONTRADO -----");
+            printf("\nCod: %d", lista->itens[i].cod);
+            printf("\nNome: %s", lista->itens[i].nome);
+            printf("Quant: %d", lista->itens[i].quant);
+            return;
+        }
+    }
+
+    printf("\n\n\tItem não encontrado.");
 }
 
 int main(){    
@@ -70,7 +108,7 @@ int main(){
         printf("\n[4] - PESQUISAR NA LISTA");
         printf("\n[0] - SAIR");
        
-        printf("\n\n Digite sua opção: ");
+        printf("\n\n Digite sua opcao: ");
         scanf("%d", &op);
        
         switch(op){
@@ -85,7 +123,7 @@ int main(){
             //case 3: excluir(&lista);
                     break;
            
-            //case 4: pesquisar(&lista);
+            case 4: pesquisar(&lista);
         }
        
         printf("\n\n");
