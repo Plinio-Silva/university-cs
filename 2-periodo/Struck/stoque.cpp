@@ -23,7 +23,7 @@ void inserir(tipo_lista *lista){
     system("cls");
    
     if(lista->total == TAM){
-        printf("\n\n\tLista cheia! Não é possível inserir novos itens.");
+        printf("\n\n\tLista cheia! Sem possibilidade de inserir novos itens.");
         return;
     }
 
