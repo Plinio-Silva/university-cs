@@ -88,6 +88,38 @@ void pesquisar(tipo_lista *lista){
     printf("\n\n\tItem não encontrado.");
 }
 
+void excluir(tipo_lista *lista){
+    system("cls");
+    if ( lista->total == 0 )
+    {
+        printf("\n\n\tLista vazia! Sem itens para excluir.");
+        return;
+    }
+
+    int pos = -1;
+
+    int cod;
+    printf("\n\nDigite o codigo do item que deseja excluir: ");
+    scanf("%d", &cod);
+
+    for(int i = 0; i < lista->total; i++){
+        if(lista->itens[i].cod == cod){
+            pos = i;
+            break;
+        }
+    }
+
+    if(pos != -1){
+        for(int j = pos; j < lista->total - 1; j++){
+            lista->itens[j] = lista->itens[j+1];
+        }
+        lista->total--;
+        printf("\n\n\tItem excluido com sucesso!");
+    } else {
+        printf("\n\n\tItem não encontrado.");
+    }
+}
+
 int main(){    
     setlocale(LC_ALL, "Portuguese");        
     printf("\n\n\n");
@@ -120,7 +152,7 @@ int main(){
             case 2: mostrar(&lista);
                     break;
                    
-            //case 3: excluir(&lista);
+            case 3: excluir(&lista);
                     break;
            
             case 4: pesquisar(&lista);
